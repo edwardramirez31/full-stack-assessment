@@ -4,8 +4,8 @@ import type { ErrorObject, Question } from '@store/types/models';
 export const MOCKED_QUESTIONS: Question[] = [
   {
     id: 1,
-    title: 'MOCKED TITLE',
-    text: 'MOCKED TEXT',
+    title: 'MOCKED TITLE 1',
+    text: 'MOCKED TEXT 1',
   },
   {
     id: 2,

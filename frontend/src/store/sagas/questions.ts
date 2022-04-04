@@ -1,14 +1,18 @@
 /* eslint-disable no-console */
-import { all, takeEvery } from 'redux-saga/effects';
+import type { CallEffect, PutEffect } from 'redux-saga/effects';
+import { all, call, put, takeEvery } from 'redux-saga/effects';
 
-import { getQuestions } from 'store/slices/questions';
+import { QuestionsAPI } from '@apis/index';
+import type { ErrorObject, Question } from '@store/types/models';
+import { getQuestions, getQuestionsError, getQuestionsSuccess } from 'store/slices/questions';
 
-function* getQuestionSaga(): Generator {
+function* getQuestionSaga(): Generator<CallEffect<Question[]> | PutEffect, void, Question[]> {
   try {
-    yield 1;
-    console.log('Running');
+    const tasks = yield call([QuestionsAPI, 'getQuestions']);
+    yield put(getQuestionsSuccess(tasks));
   } catch (err) {
-    console.log(err);
+    const error = err as ErrorObject;
+    yield put(getQuestionsError(error));
   }
 }
 

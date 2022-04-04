@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: Poppins;
+}
+
+#title {
+  @apply px-8;
+  @apply py-5;
+  @apply font-bold;
+  width: 500px;
+  color: #ffffff;
+  background-color: #000;
+  text-align: center;
+  font-size: 35.7px;
+  line-height: 39.1px;
+  letter-spacing: 2px;
+  font-size: 42px;
+  line-height: 46px;
+  font-weight: 700;
+}
+
+.question-title {
+  @apply cursor-pointer;
+  @apply font-bold;
+  color: rgba(0,0,0,0.65);
+  font-size: 26px;
+  line-height: 28px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+}
+
+.question-text {
+  color: rgb(122, 125, 128);
+  font-size: 20px;
+  line-height: 30px;
+  padding-right: 30px;
+}
+
+.question-item {
+  border-bottom: 2px solid rgba(0,0,0,0.08);
+}
+
+.question-text p {
+  @apply pb-6;
+}
+
+.question-text a {
+  @apply text-selected;
+}
+
+.question-text a:hover {
+  color: #009490;
+}
+
