@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:1337/api',
+  baseURL: 'https://strapi-faq.herokuapp.com/api',
 });
 
 export default axiosInstance;
